@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html th:replace="~{base :: parent(~{::#content},~{ :: title},~{::script})}">
+<head>
+  <title >Home Page</title>
+</head>
+<body>
+  
+  <div id="content" class="h-screen flex justify-center items-center">
+   <div class="text-center flex justify-center items-center flex-col">
+     <div class="w-full text-center ">
+       
+         <h1 class="text-5xl mb-2">Welcome To ,</h1>
+         <h2 class="mb-2 text-2xl text-gray-500">Smart Contact Manager </h2>
+         <p class="mb-3">It's a One Stop Solution for Managing & Storing Contacts, Let's get Start...</p>
+       </div>
+      
+       <div>
+     <a data-th-href="${loggedIn} ?  '/login' :'user/profile' ">
+        <button class="px-5 py-3 bg-blue-800 text-white rounded-md hover:bg-blue-700">
+            Get Started
+        </button>
+       </a>
+        </div>
+
+       </div>
+     </div>
+   </div>
+  </div>
+ <script>
+ console.log("about")</script>  
+</body>
+</html>

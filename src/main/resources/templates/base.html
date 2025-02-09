@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html  th:fragment="parent(content,title,script)" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link href="https://cdn.jsdelivr.net/npm/flowbite@3.0.0/dist/flowbite.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
+integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+ <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+ <link rel="stylesheet" data-th-href="@{'/Css/style.css'}">
+ <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+<title data-th-replace="${title}" >Insert title here</title>
+
+</head>
+<body class="dark:bg-gray-900 text-white">
+   
+<div th:if="${loggedUser}">
+   <div data-th-replace="~{user/user_navbar :: user-navbar}"></div>
+</div>
+
+
+<div th:unless="${loggedUser}">
+   <div data-th-replace="~{navbar :: navbar}"></div>
+</div>
+ 
+  <div  data-th-replace="${content}"  >
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@3.0.0/dist/flowbite.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <div data-th-replace="${script}">
+  </div>
+</body>
+</html>

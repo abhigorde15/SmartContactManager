@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html th:replace="~{base :: parent(~{::#content},~{ :: title},~{::script})}">
+<head>
+  <title >Register Page</title>
+</head>
+<body>
+  
+  <div id="content"  class="mt-20">
+  
+   <div class="grid grid-cols-12">
+    <div class="col-span-4 md:col-span-2 lg:col-span-3"></div>
+    <div class="col-span-12  md:col-span-8 lg:col-span-6">
+     <div href="#" class="block p-6 bg-white border border-t-[7px] border-blue-600 rounded-lg shadow-sm hover:bg-gray-100 dark:bg-gray-800  dark:hover:bg-gray-700">
+
+     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Signup Here</h5>
+     <p class="font-normal text-gray-700 dark:text-gray-400">
+       Start managing contacts on cloud...
+     </p>
+     <form  novalidate
+     method="post" data-th-action="@{'/do-register'}" 
+     class="mt-5" data-th-object="${userForm}">
+       <div class="mb-3">
+         <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Name</label>
+         <input type="text" id="name"
+          data-th-field="*{name}"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 
+         focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white 
+         dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Name" required />
+       </div>
+       
+       <p  data-th-if="${#fields.hasErrors('name')}"
+         data-th-errors="*{name}"
+        class="text-red-600 py-2">Name is required</p>
+       
+       <div class="mb-3">
+         <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Email</label>
+         <input type="email" id="email" 
+         data-th-field="*{email}"
+         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 
+         focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white 
+         dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="example123@gmail.com" required />
+       </div>
+       
+       <p  data-th-if="${#fields.hasErrors('email')}"
+         data-th-errors="*{email}"
+        class="text-red-600 py-2">email is required</p>
+        
+       <div class="mb-3">
+         <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Password</label>
+         <input type="password" 
+         data-th-field="*{password}"
+          id="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 
+         focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white 
+         dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required />
+       </div>
+       
+       <p  data-th-if="${#fields.hasErrors('password')}"
+         data-th-errors="*{password}"
+        class="text-red-600 py-2">password is required</p>
+        
+       <div class="mb-3">
+         <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Contact Number</label>
+         <input type="text" 
+         data-th-field="*{phone}"
+         id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 
+         focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white 
+         dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required />
+       </div>
+       
+       <p  data-th-if="${#fields.hasErrors('phone')}"
+         data-th-errors="*{phone}"
+        class="text-red-600 py-2">phone is required</p>
+        
+       <div class="mb-3">
+         
+        <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Write Something</label>
+        <textarea id="message" rows="6" 
+        data-th-field="*{about}"
+        class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300
+         focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white 
+         dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write here.."></textarea>
+         
+       </div>
+       <p  data-th-if="${#fields.hasErrors('about')}"
+         data-th-errors="*{about}"
+        class="text-red-600 py-2">about is required</p>
+       <div class="mb-3 flex justify-center space-x-3">
+         <button type="submit" class="px-3 py-2 rounded dark:bg-blue-800 hover:bg-blue-900 bg-gray-800 text-white">Signup</button>
+         <button type="reset" class="px-3 py-2 rounded dark:bg-orange-800 hover:bg-orange-900 bg-orange-800 text-white">Reset</button>
+       </div>
+     </form>
+     </div>
+     
+    </div>
+   </div>
+
+  </div>
+ <script>
+ </script>  
+</body>
+</html>

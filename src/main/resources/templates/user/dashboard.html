@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html th:replace="~{base :: parent(~{::#content},~{ :: title},~{::script})}">
+<head>
+  <title data-th-text="${loggedUser.name}" >Profile Page</title>
+</head>
+<body>
+  <div id="content">
+    <div th:if="${loggedUser}+'|Dashboard'">
+     <div data-th-replace="~{user/Sidebar :: sidebar}"></div>
+    </div>
+    <div  class="text-left sm:pl-75 pt-10">
+    <h1 class="text-5xl">Welcome to DashBoard page</h1>
+    <h1>Dashboard page</h1>
+  </div>
+  </div>
+  
+ <script>
+ console.log("This is dashboard page")</script>  
+</body>
+</html>
