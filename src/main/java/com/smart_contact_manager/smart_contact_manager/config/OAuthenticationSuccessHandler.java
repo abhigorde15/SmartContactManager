@@ -37,7 +37,7 @@ public class OAuthenticationSuccessHandler implements AuthenticationSuccessHandl
 	  String authorizedClientRegId =  oauth2AuthenticationToken.getAuthorizedClientRegistrationId();
 	  
 	  var oauthUser = (DefaultOAuth2User)authentication.getPrincipal();
-	  System.out.println("Oauthuser.............................."+oauthUser);
+	//  System.out.println("Oauthuser.............................."+oauthUser);
 	  User user = new User();
 	  user.setUserId(UUID.randomUUID().toString());
 	  user.setRoleList(List.of("ROLE_USER"));

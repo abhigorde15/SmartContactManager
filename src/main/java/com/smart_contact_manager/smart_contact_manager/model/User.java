@@ -58,7 +58,9 @@ public class User implements UserDetails {
 	}
 
 	@Id
-     private String userId;
+	@Column(name = "user_id")
+	private String userId;
+
 	 @Column(nullable=false)
      private String name;
 	 @Column(nullable=false,unique=true)

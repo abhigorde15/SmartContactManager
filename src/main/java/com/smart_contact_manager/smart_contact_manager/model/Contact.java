@@ -45,7 +45,7 @@ public class Contact {
 	 @JoinColumn(name = "user_id", nullable = false) // Ensure this column exists in DB
 	 @JsonIgnore 
 	 private User user;
-    
+	
     @OneToMany(mappedBy="contact",cascade=CascadeType.ALL,fetch = FetchType.EAGER)
     private List<SocialLink> links = new ArrayList<>();
 
